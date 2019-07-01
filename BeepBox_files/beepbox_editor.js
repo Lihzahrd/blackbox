@@ -23,7 +23,7 @@ var beepbox;
 (function (beepbox) {
     class Config {
     }
-    Config.versionDisplayName = "Modbox 3.3 BETA";
+    Config.versionDisplayName = "BlackBox 1.0";
     Config.scales = toNameMap([
         { name: "easy :)", flags: [true, false, true, false, true, false, false, true, false, true, false, false] },
         { name: "easy :(", flags: [true, false, false, true, false, true, false, true, false, false, true, false] },
@@ -37,8 +37,6 @@ var beepbox;
         { name: "dbl harmonic :(", flags: [true, false, true, true, false, false, true, true, true, false, false, true] },
         { name: "enigma", flags: [true, false, true, false, true, false, true, false, true, false, true, false] },
         { name: "expert", flags: [true, true, true, true, true, true, true, true, true, true, true, true] },
-		{ name: "monotonic", flags: [true, false, false, false, false, false, false, false, false, false, false, false] },
-		{ name: "beep bishop", flags: [true, true,  false, true,  true,  true,  true,  true,  true,  false, true,  false] },
     ]);
     Config.keys = toNameMap([
         { name: "C", isWhiteKey: true, basePitch: 12 },
@@ -75,7 +73,7 @@ var beepbox;
         { name: "÷8", stepsPerBeat: 8, ticksPerArpeggio: 3, arpeggioPatterns: [[0], [0, 1], [0, 1, 2, 1], [0, 1, 2, 3]], roundUpThresholds: null },
         { name: "freehand", stepsPerBeat: 24, ticksPerArpeggio: 3, arpeggioPatterns: [[0], [0, 1], [0, 1, 2, 1], [0, 1, 2, 3]], roundUpThresholds: null },
     ]);
-    Config.instrumentTypeNames = ["chip", "FM", "noise", "spectrum", "drumset", "harmonics", "PWM"];
+    Config.instrumentTypeNames = ["chip", "FM", "noise", "spectrum", "drumset", "harmonics"];
     Config.instrumentTypeHasSpecialInterval = [true, true, false, false, false, true, false];
     Config.instrumentTypeHasChorus = [true, true, true, false, false, true, true];
     Config.chipWaves = toNameMap([
@@ -229,9 +227,9 @@ var beepbox;
     Config.harmonicsWavelength = 1 << 11;
     Config.pulseWidthRange = 8;
     Config.pitchChannelCountMin = 1;
-    Config.pitchChannelCountMax = 12;
+    Config.pitchChannelCountMax = 64;
     Config.noiseChannelCountMin = 0;
-    Config.noiseChannelCountMax = 4;
+    Config.noiseChannelCountMax = 32;
     Config.noiseInterval = 6;
     Config.drumCount = 12;
     Config.pitchOctaves = 7;
@@ -1688,8 +1686,8 @@ var beepbox;
             this.rhythm = 1;
             this.instrumentsPerChannel = 1;
             if (andResetChannels) {
-                this.pitchChannelCount = 4;
-                this.noiseChannelCount = 1;
+                this.pitchChannelCount = 3;
+                this.noiseChannelCount = 2;
                 for (let channelIndex = 0; channelIndex < this.getChannelCount(); channelIndex++) {
                     if (this.channels.length <= channelIndex) {
                         this.channels[channelIndex] = new Channel();
