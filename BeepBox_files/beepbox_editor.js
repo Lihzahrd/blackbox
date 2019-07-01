@@ -25,16 +25,16 @@ var beepbox;
     }
     Config.versionDisplayName = "BlackBox 1.0";
     Config.scales = toNameMap([
-        { name: "easy :)", flags: [true, false, true, false, true, false, false, true, false, true, false, false] },
-        { name: "easy :(", flags: [true, false, false, true, false, true, false, true, false, false, true, false] },
-        { name: "island :)", flags: [true, false, false, false, true, true, false, true, false, false, false, true] },
-        { name: "island :(", flags: [true, true, false, true, false, false, false, true, true, false, false, false] },
-        { name: "blues :)", flags: [true, false, true, true, true, false, false, true, false, true, false, false] },
-        { name: "blues :(", flags: [true, false, false, true, false, true, true, true, false, false, true, false] },
-        { name: "normal :)", flags: [true, false, true, false, true, true, false, true, false, true, false, true] },
-        { name: "normal :(", flags: [true, false, true, true, false, true, false, true, true, false, true, false] },
-        { name: "dbl harmonic :)", flags: [true, true, false, false, true, true, false, true, true, false, false, true] },
-        { name: "dbl harmonic :(", flags: [true, false, true, true, false, false, true, true, true, false, false, true] },
+        { name: "easy major", flags: [true, false, true, false, true, false, false, true, false, true, false, false] },
+        { name: "easy minor", flags: [true, false, false, true, false, true, false, true, false, false, true, false] },
+        { name: "island major", flags: [true, false, false, false, true, true, false, true, false, false, false, true] },
+        { name: "island minor", flags: [true, true, false, true, false, false, false, true, true, false, false, false] },
+        { name: "blues major", flags: [true, false, true, true, true, false, false, true, false, true, false, false] },
+        { name: "blues minor", flags: [true, false, false, true, false, true, true, true, false, false, true, false] },
+        { name: "normal major", flags: [true, false, true, false, true, true, false, true, false, true, false, true] },
+        { name: "normal minor", flags: [true, false, true, true, false, true, false, true, true, false, true, false] },
+        { name: "dbl harmonic major", flags: [true, true, false, false, true, true, false, true, true, false, false, true] },
+        { name: "dbl harmonic minor", flags: [true, false, true, true, false, false, true, true, true, false, false, true] },
         { name: "enigma", flags: [true, false, true, false, true, false, true, false, true, false, true, false] },
         { name: "expert", flags: [true, true, true, true, true, true, true, true, true, true, true, true] },
     ]);
@@ -71,7 +71,7 @@ var beepbox;
         { name: "÷4 (standard)", stepsPerBeat: 4, ticksPerArpeggio: 3, arpeggioPatterns: [[0], [0, 0, 1, 1], [0, 1, 2, 1], [0, 1, 2, 3]], roundUpThresholds: [3, 9, 17, 21] },
         { name: "÷6", stepsPerBeat: 6, ticksPerArpeggio: 4, arpeggioPatterns: [[0], [0, 1], [0, 1, 2, 1], [0, 1, 2, 3]], roundUpThresholds: null },
         { name: "÷8", stepsPerBeat: 8, ticksPerArpeggio: 3, arpeggioPatterns: [[0], [0, 1], [0, 1, 2, 1], [0, 1, 2, 3]], roundUpThresholds: null },
-        { name: "freehand", stepsPerBeat: 24, ticksPerArpeggio: 3, arpeggioPatterns: [[0], [0, 1], [0, 1, 2, 1], [0, 1, 2, 3]], roundUpThresholds: null },
+        { name: "freehand", stepsPerBeat: 500, ticksPerArpeggio: 3, arpeggioPatterns: [[0], [0, 1], [0, 1, 2, 1], [0, 1, 2, 3]], roundUpThresholds: null },
     ]);
     Config.instrumentTypeNames = ["chip", "FM", "noise", "spectrum", "drumset", "harmonics"];
     Config.instrumentTypeHasSpecialInterval = [true, true, false, false, false, true, false];
@@ -420,6 +420,7 @@ var beepbox;
                 { name: "harpsichord", midiProgram: 6, generalMidi: true, settings: { "type": "FM", "effects": "reverb", "transition": "hard fade", "chord": "harmony", "filterCutoffHz": 8000, "filterResonance": 0, "filterEnvelope": "twang 2", "vibrato": "none", "algorithm": "1←(2 3←4)", "feedbackType": "4⟲", "feedbackAmplitude": 9, "feedbackEnvelope": "twang 2", "operators": [{ "frequency": "1×", "amplitude": 15, "envelope": "custom" }, { "frequency": "4×", "amplitude": 8, "envelope": "steady" }, { "frequency": "3×", "amplitude": 6, "envelope": "steady" }, { "frequency": "5×", "amplitude": 7, "envelope": "steady" }] } },
                 { name: "clavinet", midiProgram: 7, generalMidi: true, settings: { "type": "FM", "transition": "hard", "effects": "reverb", "chord": "harmony", "filterCutoffHz": 5657, "filterResonance": 0, "filterEnvelope": "twang 2", "vibrato": "none", "algorithm": "1←(2 3 4)", "feedbackType": "3⟲", "feedbackAmplitude": 6, "feedbackEnvelope": "twang 2", "operators": [{ "frequency": "3×", "amplitude": 15, "envelope": "custom" }, { "frequency": "~1×", "amplitude": 6, "envelope": "steady" }, { "frequency": "8×", "amplitude": 4, "envelope": "steady" }, { "frequency": "1×", "amplitude": 0, "envelope": "steady" }] } },
                 { name: "dulcimer", midiProgram: 15, generalMidi: true, settings: { "type": "harmonics", "effects": "reverb", "transition": "hard fade", "chord": "strum", "filterCutoffHz": 5657, "filterResonance": 14, "filterEnvelope": "twang 2", "interval": "shimmer", "vibrato": "none", "harmonics": [100, 100, 100, 86, 100, 86, 57, 100, 100, 86, 100, 86, 100, 86, 100, 71, 57, 71, 71, 100, 86, 71, 86, 86, 100, 86, 86, 86] } },
+		{ name: "deep key", midiProgram: 9, generalMidi: true, settings: { "type": "harmonics", "effects": "reverb", "transition": "hard fade", "chord": "harmony", "filterCutoffHz": 8000, "filterResonance": 32, "filterEnvelope": "twang 1", "interval": "shimmer", "vibrato": "light", "harmonics": [100, 86, 86, 86, 86, 71, 71, 57, 0, 57, 29, 43, 57, 57, 57, 43, 43, 0, 29, 43, 43, 43, 43, 43, 43, 29, 0, 30] } },
             ]) },
         { name: "Idiophone Presets", presets: beepbox.toNameMap([
                 { name: "celesta", midiProgram: 8, generalMidi: true, settings: { "type": "FM", "effects": "reverb", "transition": "hard fade", "chord": "strum", "filterCutoffHz": 5657, "filterResonance": 14, "filterEnvelope": "twang 2", "vibrato": "none", "algorithm": "(1 2)←(3 4)", "feedbackType": "1⟲ 2⟲", "feedbackAmplitude": 0, "feedbackEnvelope": "steady", "operators": [{ "frequency": "~1×", "amplitude": 11, "envelope": "custom" }, { "frequency": "8×", "amplitude": 6, "envelope": "custom" }, { "frequency": "20×", "amplitude": 3, "envelope": "twang 1" }, { "frequency": "3×", "amplitude": 1, "envelope": "twang 2" }] } },
