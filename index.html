@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>BeepBox</title>
-	<meta name="description" content="BeepBox is an online tool for sketching and sharing chiptune melodies." />
+	<title>Modbox 3.3 BETA</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<meta name="description" content="BeepBox is an online tool for sketching and sharing chiptune melodies. ModBox expands the world of BeepBox into a whole new realm!" />
 	<meta name="keywords" content="chiptune, music, melody, composition, tool, square wave, NES, NSF, BeepBox, beepbox" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -31,7 +32,7 @@
 		a {
 			color: #98f;
 		}
-		.donation form {
+		.donation {
 			display: inline;
 		}
 		.donation input[type="submit"] {
@@ -73,9 +74,6 @@
 			body {
 				width: 100vw;
 			}
-			p, .donation {
-				margin: 1em 0.5em;
-			}
 			.column-container {
 				display: flex;
 				flex-direction: column;
@@ -89,25 +87,25 @@
 	<div id="beepboxEditorContainer"></div>
 	
 	<h1>
-		BeepBox
+		Modbox 3.3 BETA
 	</h1>
 	<p id="introduction">
-		BeepBox is an online tool for sketching and sharing instrumental melodies. 
+		BeepBox is an online tool for sketching and sharing instrumental melodies. Because Beepbox is so cool, the Modbox devs have to remake their mod in this new update. Stay tuned!
 	</p>
 	<p>
 		All song data is packaged into the URL at the top of your browser. 
 		When you make changes to the song, the URL is updated to reflect your changes. 
 		When you are satisfied with your song, just copy and paste the URL to save and share your song! 
 	</p>
-    <div class="donation">
-		BeepBox is a passion project, and will always be free to use. If you find it valuable and have the means, any gratuity via
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+    <div>
+		BeepBox is a passion project, and will always be free to use. If you want shaktool to make it cooler, you can donate to him
+		<form class="donation" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
 			<input type="hidden" name="cmd" value="_donations" />
 			<input type="hidden" name="business" value="QZJTX9GRYEV9N" />
 			<input type="hidden" name="currency_code" value="USD" />
-			<input type="submit" name="submit" value="Paypal"/>
+			<input type="submit" name="submit" value="here"/>
 		</form>
-		would be appreciated!
+		.
     </div>
 	
 	<div class="column-container">
@@ -155,7 +153,7 @@
 				You can also click above or below an existing note to add more notes to be played simultaneously, which is called a chord. 
 			</p>
 			<p>
-				ADVANCED: Drag vertically from an existing note to bend its pitch, or drag vertically from above or below the note to adjust its volume.
+				AVDANCED: Drag vertically from an existing note to bend its pitch, or drag vertically from above or below the note to adjust its volume.
 			</p>
 			<p>
 				BeepBox has many more features. 
@@ -170,22 +168,33 @@
 				About
 			</h1>
 			<p>
-				BeepBox is developed by <a href="http://www.johnnesky.com">John Nesky</a>, also known as <a href="https://twitter.com/shaktool">@shaktool</a>. 
+				BeepBox is developed by <a href="http://www.johnnesky.com">John Nesky</a>, also known as <a href="https://twitter.com/shaktool">@shaktool</a>. Modded Beepbox is developed by Quirby64, Theepicosity, Fillygroove, DARE, and HiddenRealm.
 			</p>
 			<p>
 				BeepBox does not claim ownership over songs created with it, so original songs belong to their authors. 
 			</p>
 			<p>
-				Neither John Nesky nor BeepBox assume responsibility for any copyrighted material played on BeepBox. No songs are ever received, recorded, or distributed by BeepBox's servers. All song data is contained in the URL after the hash (#) mark, and BeepBox running inside your browser converts that data into sound waves.
+				Neither John Nesky nor BeepBox/ModBox assume responsibility for any copyrighted material played on BeepBox. No songs are ever received, recorded, or distributed by BeepBox's servers. All song data is contained in the URL after the hash (#) mark, and BeepBox running inside your browser converts that data into sound waves. This, as well as the previous statement, apply to Modbox aswell.
 			</p>
 			<p>
 				You can download <a download="beepbox_offline.html" href="beepbox_offline.html">an offline version of BeepBox</a> to use when you don't have access to the internet. The features are otherwise the same.
 			</p>
 			<p>
-				You can download and use <a href="https://bitbucket.org/shaktool/beepbox">the source code</a> under the MIT license. In particular, you can use the synth code <a href="synth_example.html">as demonstrated here</a> to play BeepBox songs in your own JavaScript projects! 
+				You can download and use <a href="https://github.com/ModdedBeepbox/3.3">the source code</a> under the MIT license. In particular, you can use the synth code <a href="synth_example.html">as demonstrated here</a> to play BeepBox songs in your own JavaScript projects! 
 			</p>
+			
+			<h1>
+				Modded BeepBox Changelog
+			</h1>
 			<p>
-				Those who yearn for simpler times can find the old version of BeepBox <a href="2_3/" target="_blank">here</a>.
+				Go <a href="https://beepbox.fandom.com/wiki/Beepbox_Wiki">here</a> for more information regarding BeepBox and ModBox.
+			</p>
+			
+			<h3>
+				ModBox 3.3 BETA
+			</h3>
+			<p>
+				Initial release.
 			</p>
 		</div>
 		<div class="twitter-column">
@@ -230,7 +239,7 @@
 			// Go ahead and load js beepbox editor interface:
 			var fileref = document.createElement("script");
 			fileref.setAttribute("type", "text/javascript");
-			fileref.setAttribute("src", "beepbox_editor.min.js");
+			fileref.setAttribute("src", "BeepBox_files/beepbox_editor.js");
 			document.head.appendChild(fileref);
 		} else {
 			document.getElementById("beepboxEditorContainer").innerHTML = "Sorry, BeepBox doesn't support your browser. Try a recent version of Chrome, Firefox, Edge, Safari, or Opera.";
