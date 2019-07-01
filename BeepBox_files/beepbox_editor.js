@@ -602,24 +602,17 @@ var beepbox;
             ]) },
     ]);
     EditorConfig.pitchColors = beepbox.toNameMap([
-        { name: "cyan", channelDim: "#0099a1", channelBright: "#25f3ff", noteDim: "#0099a1", noteBright: "#25f3ff" },
-        { name: "yellow", channelDim: "#439143", channelBright: "#44ff44", noteDim: "#439143", noteBright: "#44ff44" },
-        { name: "orange", channelDim: "#a1a100", channelBright: "#ffff25", noteDim: "#a1a100", noteBright: "#ffff25" },
-        { name: "green", channelDim: "#c75000", channelBright: "#ff9752", noteDim: "#c75000", noteBright: "#ff9752" },
-        { name: "purple", channelDim: "#d020d0", channelBright: "#ff90ff", noteDim: "#d020d0", noteBright: "#ff90ff" },
-        { name: "blue", channelDim: "#492184", channelBright: "#7500c4", noteDim: "#492184", noteBright: "#7500c4" },
-        { name: "cyan2", channelDim: "#221b89", channelBright: "#1000ff", noteDim: "#221b89", noteBright: "#1000ff" },
-        { name: "yellow2", channelDim: "#00995f", channelBright: "#00ff9f", noteDim: "#00995f", noteBright: "#00ff9f" },
-        { name: "orange2", channelDim: "#d6b03e", channelBright: "#ffbf00", noteDim: "#d6b03e", noteBright: "#ffbf00" },
-        { name: "green2", channelDim: "#b25915", channelBright: "#d85d00", noteDim: "#b25915", noteBright: "#d85d00" },
-        { name: "purple2", channelDim: "#891a60", channelBright: "#ff00a1", noteDim: "#891a60", noteBright: "#ff00a1" },
-        { name: "blue2", channelDim: "#965cbc", channelBright: "#c26afc", noteDim: "#965cbc", noteBright: "#c26afc" },
+        { name: "cyan", channelDim: "#0099A1", channelBright: "#25F3FF", noteDim: "#00BDC7", noteBright: "#92F9FF" },
+        { name: "yellow", channelDim: "#A1A100", channelBright: "#FFFF25", noteDim: "#C7C700", noteBright: "#FFFF92" },
+        { name: "orange", channelDim: "#C75000", channelBright: "#FF9752", noteDim: "#FF771C", noteBright: "#FFCDAB" },
+        { name: "green", channelDim: "#00A100", channelBright: "#50FF50", noteDim: "#00C700", noteBright: "#A0FFA0" },
+        { name: "purple", channelDim: "#D020D0", channelBright: "#FF90FF", noteDim: "#E040E0", noteBright: "#FFC0FF" },
+        { name: "blue", channelDim: "#7777B0", channelBright: "#A0A0FF", noteDim: "#8888D0", noteBright: "#D0D0FF" },
     ]);
     EditorConfig.noiseColors = beepbox.toNameMap([
-        { name: "gray", channelDim: "#991010", channelBright: "#ff1616", noteDim: "#991010", noteBright: "#ff1616" },
-        { name: "brown", channelDim: "#aaaaaa", channelBright: "#ffffff", noteDim: "#aaaaaa", noteBright: "#ffffff" },
-        { name: "azure", channelDim: "#5869BD", channelBright: "#768dfc", noteDim: "#5869BD", noteBright: "#768dfc" },
-		{ name: "azure2", channelDim: "#7c9b42", channelBright: "#a5ff00", noteDim: "#7c9b42", noteBright: "#a5ff00" },
+        { name: "gray", channelDim: "#6F6F6F", channelBright: "#AAAAAA", noteDim: "#A7A7A7", noteBright: "#E0E0E0" },
+        { name: "brown", channelDim: "#996633", channelBright: "#DDAA77", noteDim: "#CC9966", noteBright: "#F0D0BB" },
+        { name: "azure", channelDim: "#4A6D8F", channelBright: "#77AADD", noteDim: "#6F9FCF", noteBright: "#BBD7FF" },
     ]);
     beepbox.EditorConfig = EditorConfig;
 })(beepbox || (beepbox = {}));
